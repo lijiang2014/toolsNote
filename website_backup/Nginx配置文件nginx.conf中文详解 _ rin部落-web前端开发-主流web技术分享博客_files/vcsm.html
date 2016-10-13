@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!-- saved from url=(0758)http://pos.baidu.com/vcsm?rdid=2532001&dc=2&di=u2532001&dri=0&dis=0&dai=1&ps=450x1241&dcb=BAIDU_SSP_define&dtm=HTML_POST&dvi=0.0&dci=-1&dpt=none&tsr=0&tpr=1476347339272&ti=Nginx%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6nginx.conf%E4%B8%AD%E6%96%87%E8%AF%A6%E8%A7%A3%20%7C%20rin%E9%83%A8%E8%90%BD-web%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91-%E4%B8%BB%E6%B5%81web%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB%E5%8D%9A%E5%AE%A2&ari=2&dbv=2&drs=1&pcs=1903x911&pss=1903x3620&cfv=0&cpl=5&chi=1&cce=true&cec=UTF-8&tlm=1476347339&rw=911&ltu=http%3A%2F%2Fwww.9958.pw%2Fpost%2Fnginx_config&ltr=http%3A%2F%2Fwww.thinkphp.cn%2Fcode%2F502.html&ecd=1&psr=1920x1080&par=1920x1040&pis=-1x-1&ccd=24&cja=false&cmi=7&col=zh-CN&cdo=-1&tcn=1476347339&qn=9da40362124815df&tt=1476347339185.90.237.240 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- 0|0 -->
+
+<title>百度网盟推广</title>
+<style type="text/css">
+#kw{
+    border:2px solid blue;
+    font-family:微软雅黑;
+    position:absolute;
+    padding-left: 5px;
+}
+#btn{
+    background-color:blue;
+    border:0px;
+    color: white;
+    font-family:微软雅黑;
+    position:absolute;
+}
+#hotwords_down{
+    font-family:微软雅黑;
+    font-size:10px;
+    position:absolute;
+    padding-left: 5px;
+}
+#hotwords_right{
+    font-family:微软雅黑;
+    font-size:10px;
+    position:absolute;
+}
+.item{
+    margin: 2px;
+    text-decoration: none;
+    position: absolute;
+}
+</style>
+<script type="text/javascript">
+    var Base={config:{},cache:{},getKeysByType:function(b){b=(b||"class").toLowerCase();var a=b+"LoadFinished",c=b+"LoadFnArray",d=b+"LoadMap";this[a]="boolean"===typeof this[a]?this[a]:!0;this[c]=this[c]||[];this[d]=this[d]||{};return{status:a,array:c,map:d,type:b}},updateLoadStatus:function(b,a,c){c=this.getKeysByType(c);if(b&&(this[c.map][b]=a,"loaded"!==a))return this[c.status]=!1;b=!0;for(var d in this[c.map])if(d&&this[c.map].hasOwnProperty(d)&&"loaded"!==this[c.map][d]){b=!1;break}return this[c.status]=
+    b},loadImage:function(b){var a=new Image;a.onload=a.onerror=a.onabort=function(){a.onload=a.onerror=a.onabort=null;this.updateLoadStatus(b,"loaded","image");if(this.imageLoadFinished)for(var c,d=0,h=this.imageLoadFnArray.length;d<h;d++)c=this.imageLoadFnArray.shift(),c()}.proxy(this);a.src=b},fastClone:function(b){var a=function(){};a.prototype=b;return new a},declare:function(b){b=b();var a=b.name;if(!a)throw"can't find the obj name";for(var c=b.namespace+"."+a,d=c.split("."),h=d.length,f=window,
+    j="",e=0;e<h-1;e++){var g=d[e];f==window?(f[g]=window[g]=window[g]||{},j+=g):(f[g]=f[g]||{},j+="."+g);f=f[g];this.cache[j]=f}f[a]=f[a]||b;this.cache=this.cache||{};this.cache[c]=f[a];return!0},using:function(b,a,c){if(this.cache&&this.cache[b])return this.cache[b];a=a||"class";c=c||this.config.version[a]||"1.0.0";var d;switch(a){case "image":0>b.indexOf("http")&&(b=this.config.baseUrl+"img/"+(c&&"0"!==c?c.toString():"")+"/"+b);this.updateLoadStatus(b,"loading","image");this.loadImage(b);d=b;break;
+    case "class":var h=this.getKeysByType(a);a=b.split(".");d=window[a[0]];for(var f=1,j=a.length;f<j;f++)d=d&&d[a[f]]?d[a[f]]:null;if(!d&&!this[h.map][b]){this.updateLoadStatus(b,"loading","class");var e=document.createElement("script");e.type="text/javascript";e.async=!0;a=this.config.baseUrl+"js/";c&&"0"!==c&&(a+=c.toString()+"/");a+=b.replace(/\./gi,"/")+".js";e.src=a.toLowerCase();e.onload=e.onerror=e.onreadystatechange=function(){if(/loaded|complete|undefined/.test(e.readyState)){e.onload=e.onerror=
+    e.onreadystatechange=null;if(this.updateLoadStatus(b,"loaded","class"))for(var a,c=0,d=this[h.array].length;c<d;c++)a=this[h.array].shift(),a();e=void 0}}.proxy(this);c=document.getElementsByTagName("script")[0];c.parentNode.insertBefore(e,c)}this.cache=this.cache||{};this.cache[b]=d}return d},config:function(b){b&&(this.config=b)},run:function(b){if(b){var a=this.getKeysByType();this[a.status]?b():this[a.array].push(b)}}};
+    Function.prototype.proxy=function(b){var a=this,c=Array.prototype.slice.apply(arguments).shift();return function(b){return a.apply(c,arguments)}};window.declare=Base.declare.proxy(Base);window.using=Base.using.proxy(Base);window.run=Base.run.proxy(Base);window.config=Base.config.proxy(Base);document.execCommand("BackgroundImageCache",!1,!0);
+    
+</script>
+
+</head><body marginwidth="0" marginheight="0"><div style="display:none;"><img src="./adx.php" height="1px" width="1px" alt=""></div>
+<div id="search_box">
+<input type="text" id="kw" maxlength="30" style="top: 0px; left: 0px; width: 234px; height: 22px; font-size: 11px; border-color: rgb(73, 72, 62);"><input type="submit" id="btn" value="搜索" style="top: 0px; left: 234px; width: 66px; height: 28px; font-size: 11px; background-color: rgb(73, 72, 62);">
+</div>
+<div id="hotwords_down" style="top: 27px; left: 0px; width: 300px; height: 33px; line-height: 1.65;">
+<div style="float: right; width: 300px; height: 33px;"><a href="https://cpro.baidu.com/cpro/ui/uijs.php?adclass=0&amp;app_id=0&amp;c=news&amp;cf=1&amp;ch=0&amp;di=8&amp;fv=0&amp;is_app=0&amp;jk=fd07bd45e57d3067&amp;k=%C3%E2%B7%D1vpn%B7%FE%CE%F1%C6%F7&amp;k0=%C3%E2%B7%D1vpn%B7%FE%CE%F1%C6%F7&amp;k1=ftp%B4%FA%C0%ED&amp;k2=%C8%D5%B1%BE%B7%FE%CE%F1%C6%F7&amp;k3=%B8%DF%B7%C0%B7%FE%CE%F1%C6%F7&amp;k4=%D6%C6%D7%F7%BB%C3%B5%C6&amp;k5=%B7%FE%CE%F1%C6%F7%CD%D0%B9%DC&amp;kdi0=8&amp;kdi1=8&amp;kdi2=8&amp;kdi3=8&amp;kdi4=8&amp;kdi5=8&amp;luki=2&amp;mcpm=73312&amp;n=10&amp;ncf=0&amp;nmv=0&amp;p=baidu&amp;q=60004170_cpr&amp;rb=0&amp;rs=1&amp;seller_id=1&amp;sid=67307de545bd07fd&amp;ssp2=1&amp;stid=31&amp;t=tpclicked3_hc&amp;td=2532001&amp;tu=u2532001&amp;u=http%3A%2F%2Fwww%2E9958%2Epw%2Fpost%2Fnginx%5Fconfig&amp;urlid=0" class="item" target="_blank" style="left: 5px; font-size: 11px;">免费vpn服务器</a><a href="https://cpro.baidu.com/cpro/ui/uijs.php?adclass=0&amp;app_id=0&amp;c=news&amp;cf=1&amp;ch=0&amp;di=8&amp;fv=0&amp;is_app=0&amp;jk=fd07bd45e57d3067&amp;k=ftp%B4%FA%C0%ED&amp;k0=ftp%B4%FA%C0%ED&amp;k1=%C8%D5%B1%BE%B7%FE%CE%F1%C6%F7&amp;k2=%B8%DF%B7%C0%B7%FE%CE%F1%C6%F7&amp;k3=%D6%C6%D7%F7%BB%C3%B5%C6&amp;k4=%B7%FE%CE%F1%C6%F7%CD%D0%B9%DC&amp;k5=%CD%F8%C2%E7%B5%E7%BB%B0%B4%FA%C0%ED&amp;kdi0=8&amp;kdi1=8&amp;kdi2=8&amp;kdi3=8&amp;kdi4=8&amp;kdi5=8&amp;luki=3&amp;mcpm=33913&amp;n=10&amp;ncf=0&amp;nmv=0&amp;p=baidu&amp;q=60004170_cpr&amp;rb=0&amp;rs=1&amp;seller_id=1&amp;sid=67307de545bd07fd&amp;ssp2=1&amp;stid=31&amp;t=tpclicked3_hc&amp;td=2532001&amp;tu=u2532001&amp;u=http%3A%2F%2Fwww%2E9958%2Epw%2Fpost%2Fnginx%5Fconfig&amp;urlid=0" class="item" target="_blank" style="left: 113px; font-size: 11px;">ftp代理</a><a href="https://cpro.baidu.com/cpro/ui/uijs.php?adclass=0&amp;app_id=0&amp;c=news&amp;cf=1&amp;ch=0&amp;di=8&amp;fv=0&amp;is_app=0&amp;jk=fd07bd45e57d3067&amp;k=%C8%D5%B1%BE%B7%FE%CE%F1%C6%F7&amp;k0=%C8%D5%B1%BE%B7%FE%CE%F1%C6%F7&amp;k1=%B8%DF%B7%C0%B7%FE%CE%F1%C6%F7&amp;k2=%D6%C6%D7%F7%BB%C3%B5%C6&amp;k3=%B7%FE%CE%F1%C6%F7%CD%D0%B9%DC&amp;k4=%CD%F8%C2%E7%B5%E7%BB%B0%B4%FA%C0%ED&amp;k5=vpn%B4%FA%C0%ED%B7%FE%CE%F1%C6%F7&amp;kdi0=8&amp;kdi1=8&amp;kdi2=8&amp;kdi3=8&amp;kdi4=8&amp;kdi5=8&amp;luki=4&amp;mcpm=27799&amp;n=10&amp;ncf=0&amp;nmv=0&amp;p=baidu&amp;q=60004170_cpr&amp;rb=0&amp;rs=1&amp;seller_id=1&amp;sid=67307de545bd07fd&amp;ssp2=1&amp;stid=31&amp;t=tpclicked3_hc&amp;td=2532001&amp;tu=u2532001&amp;u=http%3A%2F%2Fwww%2E9958%2Epw%2Fpost%2Fnginx%5Fconfig&amp;urlid=0" class="item" target="_blank" style="left: 188px; font-size: 11px;">日本服务器</a></div></div>
+<div id="hotwords_right" style="top: 5.5px; left: 305px; width: 234px; height: 22px; line-height: 1.1;">
+</div>
+
+<script type="text/javascript">
+    var ads = [{"bid":"","cbg":"#49483e","curl":"https://cpro.baidu.com/cpro/ui/uijs.php?adclass=0&app_id=0&c=news&cf=1&ch=0&di=8&fv=0&is_app=0&jk=fd07bd45e57d3067&k=vpn%B4%FA%C0%ED%B7%FE%CE%F1%C6%F7&k0=vpn%B4%FA%C0%ED%B7%FE%CE%F1%C6%F7&k1=%C3%E2%B7%D1vpn%B7%FE%CE%F1%C6%F7&k2=ftp%B4%FA%C0%ED&k3=%C8%D5%B1%BE%B7%FE%CE%F1%C6%F7&k4=%B8%DF%B7%C0%B7%FE%CE%F1%C6%F7&k5=%D6%C6%D7%F7%BB%C3%B5%C6&kdi0=8&kdi1=8&kdi2=8&kdi3=8&kdi4=8&kdi5=8&luki=1&mcpm=66592&n=10&ncf=0&nmv=0&p=baidu&q=60004170_cpr&rb=0&rs=1&seller_id=1&sid=67307de545bd07fd&ssp2=1&stid=31&t=tpclicked3_hc&td=2532001&tu=u2532001&u=http%3A%2F%2Fwww%2E9958%2Epw%2Fpost%2Fnginx%5Fconfig&urlid=0","desc":"vpn代理服务器","dspw":"","height":54,"icon":482,"isHb":"false","iss":0,"surl":"","title":"vpn代理服务器","type":"text","width":300,"word_src":"d","wp":3},{"bid":"","cbg":"#49483e","curl":"https://cpro.baidu.com/cpro/ui/uijs.php?adclass=0&app_id=0&c=news&cf=1&ch=0&di=8&fv=0&is_app=0&jk=fd07bd45e57d3067&k=%C3%E2%B7%D1vpn%B7%FE%CE%F1%C6%F7&k0=%C3%E2%B7%D1vpn%B7%FE%CE%F1%C6%F7&k1=ftp%B4%FA%C0%ED&k2=%C8%D5%B1%BE%B7%FE%CE%F1%C6%F7&k3=%B8%DF%B7%C0%B7%FE%CE%F1%C6%F7&k4=%D6%C6%D7%F7%BB%C3%B5%C6&k5=%B7%FE%CE%F1%C6%F7%CD%D0%B9%DC&kdi0=8&kdi1=8&kdi2=8&kdi3=8&kdi4=8&kdi5=8&luki=2&mcpm=73312&n=10&ncf=0&nmv=0&p=baidu&q=60004170_cpr&rb=0&rs=1&seller_id=1&sid=67307de545bd07fd&ssp2=1&stid=31&t=tpclicked3_hc&td=2532001&tu=u2532001&u=http%3A%2F%2Fwww%2E9958%2Epw%2Fpost%2Fnginx%5Fconfig&urlid=0","desc":"免费vpn服务器","dspw":"","height":54,"icon":545,"isHb":"false","iss":0,"surl":"","title":"免费vpn服务器","type":"text","width":300,"word_src":"d","wp":3},{"bid":"","cbg":"#49483e","curl":"https://cpro.baidu.com/cpro/ui/uijs.php?adclass=0&app_id=0&c=news&cf=1&ch=0&di=8&fv=0&is_app=0&jk=fd07bd45e57d3067&k=ftp%B4%FA%C0%ED&k0=ftp%B4%FA%C0%ED&k1=%C8%D5%B1%BE%B7%FE%CE%F1%C6%F7&k2=%B8%DF%B7%C0%B7%FE%CE%F1%C6%F7&k3=%D6%C6%D7%F7%BB%C3%B5%C6&k4=%B7%FE%CE%F1%C6%F7%CD%D0%B9%DC&k5=%CD%F8%C2%E7%B5%E7%BB%B0%B4%FA%C0%ED&kdi0=8&kdi1=8&kdi2=8&kdi3=8&kdi4=8&kdi5=8&luki=3&mcpm=33913&n=10&ncf=0&nmv=0&p=baidu&q=60004170_cpr&rb=0&rs=1&seller_id=1&sid=67307de545bd07fd&ssp2=1&stid=31&t=tpclicked3_hc&td=2532001&tu=u2532001&u=http%3A%2F%2Fwww%2E9958%2Epw%2Fpost%2Fnginx%5Fconfig&urlid=0","desc":"ftp代理","dspw":"","height":54,"icon":551,"isHb":"false","iss":0,"surl":"","title":"ftp代理","type":"text","width":300,"word_src":"1","wp":3},{"bid":"","cbg":"#49483e","curl":"https://cpro.baidu.com/cpro/ui/uijs.php?adclass=0&app_id=0&c=news&cf=1&ch=0&di=8&fv=0&is_app=0&jk=fd07bd45e57d3067&k=%C8%D5%B1%BE%B7%FE%CE%F1%C6%F7&k0=%C8%D5%B1%BE%B7%FE%CE%F1%C6%F7&k1=%B8%DF%B7%C0%B7%FE%CE%F1%C6%F7&k2=%D6%C6%D7%F7%BB%C3%B5%C6&k3=%B7%FE%CE%F1%C6%F7%CD%D0%B9%DC&k4=%CD%F8%C2%E7%B5%E7%BB%B0%B4%FA%C0%ED&k5=vpn%B4%FA%C0%ED%B7%FE%CE%F1%C6%F7&kdi0=8&kdi1=8&kdi2=8&kdi3=8&kdi4=8&kdi5=8&luki=4&mcpm=27799&n=10&ncf=0&nmv=0&p=baidu&q=60004170_cpr&rb=0&rs=1&seller_id=1&sid=67307de545bd07fd&ssp2=1&stid=31&t=tpclicked3_hc&td=2532001&tu=u2532001&u=http%3A%2F%2Fwww%2E9958%2Epw%2Fpost%2Fnginx%5Fconfig&urlid=0","desc":"日本服务器","dspw":"","height":54,"icon":482,"isHb":"false","iss":0,"surl":"","title":"日本服务器","type":"text","width":300,"word_src":"d","wp":3},{"bid":"","cbg":"#49483e","curl":"https://cpro.baidu.com/cpro/ui/uijs.php?adclass=0&app_id=0&c=news&cf=1&ch=0&di=8&fv=0&is_app=0&jk=fd07bd45e57d3067&k=%B8%DF%B7%C0%B7%FE%CE%F1%C6%F7&k0=%B8%DF%B7%C0%B7%FE%CE%F1%C6%F7&k1=%D6%C6%D7%F7%BB%C3%B5%C6&k2=%B7%FE%CE%F1%C6%F7%CD%D0%B9%DC&k3=%CD%F8%C2%E7%B5%E7%BB%B0%B4%FA%C0%ED&k4=vpn%B4%FA%C0%ED%B7%FE%CE%F1%C6%F7&k5=%C3%E2%B7%D1vpn%B7%FE%CE%F1%C6%F7&kdi0=8&kdi1=8&kdi2=8&kdi3=8&kdi4=8&kdi5=8&luki=5&mcpm=218831&n=10&ncf=0&nmv=0&p=baidu&q=60004170_cpr&rb=0&rs=1&seller_id=1&sid=67307de545bd07fd&ssp2=1&stid=31&t=tpclicked3_hc&td=2532001&tu=u2532001&u=http%3A%2F%2Fwww%2E9958%2Epw%2Fpost%2Fnginx%5Fconfig&urlid=0","desc":"高防服务器","dspw":"","height":54,"icon":545,"isHb":"false","iss":0,"surl":"","title":"高防服务器","type":"text","width":300,"word_src":"d","wp":3},{"bid":"","cbg":"#49483e","curl":"https://cpro.baidu.com/cpro/ui/uijs.php?adclass=0&app_id=0&c=news&cf=1&ch=0&di=8&fv=0&is_app=0&jk=fd07bd45e57d3067&k=%D6%C6%D7%F7%BB%C3%B5%C6&k0=%D6%C6%D7%F7%BB%C3%B5%C6&k1=%B7%FE%CE%F1%C6%F7%CD%D0%B9%DC&k2=%CD%F8%C2%E7%B5%E7%BB%B0%B4%FA%C0%ED&k3=vpn%B4%FA%C0%ED%B7%FE%CE%F1%C6%F7&k4=%C3%E2%B7%D1vpn%B7%FE%CE%F1%C6%F7&k5=ftp%B4%FA%C0%ED&kdi0=8&kdi1=8&kdi2=8&kdi3=8&kdi4=8&kdi5=8&luki=6&mcpm=89499&n=10&ncf=0&nmv=0&p=baidu&q=60004170_cpr&rb=0&rs=1&seller_id=1&sid=67307de545bd07fd&ssp2=1&stid=31&t=tpclicked3_hc&td=2532001&tu=u2532001&u=http%3A%2F%2Fwww%2E9958%2Epw%2Fpost%2Fnginx%5Fconfig&urlid=0","desc":"制作幻灯","dspw":"","height":54,"icon":476,"isHb":"false","iss":0,"surl":"","title":"制作幻灯","type":"text","width":300,"word_src":"2","wp":3},{"bid":"","cbg":"#49483e","curl":"https://cpro.baidu.com/cpro/ui/uijs.php?adclass=0&app_id=0&c=news&cf=1&ch=0&di=8&fv=0&is_app=0&jk=fd07bd45e57d3067&k=%B7%FE%CE%F1%C6%F7%CD%D0%B9%DC&k0=%B7%FE%CE%F1%C6%F7%CD%D0%B9%DC&k1=%CD%F8%C2%E7%B5%E7%BB%B0%B4%FA%C0%ED&k2=vpn%B4%FA%C0%ED%B7%FE%CE%F1%C6%F7&k3=%C3%E2%B7%D1vpn%B7%FE%CE%F1%C6%F7&k4=ftp%B4%FA%C0%ED&k5=%C8%D5%B1%BE%B7%FE%CE%F1%C6%F7&kdi0=8&kdi1=8&kdi2=8&kdi3=8&kdi4=8&kdi5=8&luki=7&mcpm=181079&n=10&ncf=0&nmv=0&p=baidu&q=60004170_cpr&rb=0&rs=1&seller_id=1&sid=67307de545bd07fd&ssp2=1&stid=31&t=tpclicked3_hc&td=2532001&tu=u2532001&u=http%3A%2F%2Fwww%2E9958%2Epw%2Fpost%2Fnginx%5Fconfig&urlid=0","desc":"服务器托管","dspw":"","height":54,"icon":1253,"isHb":"false","iss":0,"surl":"","title":"服务器托管","type":"text","width":300,"word_src":"d","wp":3},{"bid":"","cbg":"#49483e","curl":"https://cpro.baidu.com/cpro/ui/uijs.php?adclass=0&app_id=0&c=news&cf=1&ch=0&di=8&fv=0&is_app=0&jk=fd07bd45e57d3067&k=%CD%F8%C2%E7%B5%E7%BB%B0%B4%FA%C0%ED&k0=%CD%F8%C2%E7%B5%E7%BB%B0%B4%FA%C0%ED&k1=vpn%B4%FA%C0%ED%B7%FE%CE%F1%C6%F7&k2=%C3%E2%B7%D1vpn%B7%FE%CE%F1%C6%F7&k3=ftp%B4%FA%C0%ED&k4=%C8%D5%B1%BE%B7%FE%CE%F1%C6%F7&k5=%B8%DF%B7%C0%B7%FE%CE%F1%C6%F7&kdi0=8&kdi1=8&kdi2=8&kdi3=8&kdi4=8&kdi5=8&luki=8&mcpm=118982&n=10&ncf=0&nmv=0&p=baidu&q=60004170_cpr&rb=0&rs=1&seller_id=1&sid=67307de545bd07fd&ssp2=1&stid=31&t=tpclicked3_hc&td=2532001&tu=u2532001&u=http%3A%2F%2Fwww%2E9958%2Epw%2Fpost%2Fnginx%5Fconfig&urlid=0","desc":"网络电话代理","dspw":"","height":54,"icon":545,"isHb":"false","iss":0,"surl":"","title":"网络电话代理","type":"text","width":300,"word_src":"e","wp":3}];
+    var config = {"ad_block_height":0,"ad_block_width":0,"conBW":0,"hn":1,"image_column":0,"image_height":0,"image_row":0,"image_width":0,"iss":false,"itepl":0,"itepr":0,"n":"60004170_cpr","rankImgStyle":0,"rsi0":300,"rsi1":54,"rss1":"#49483e","rss2":"","temp_exp_flag":0,"titFS":12,"titTA":"left","titfip":0,"txt_column":0,"txt_row":0,"txt_width":0,"type":1,"wn":1,"wp":0};
+    var ra = antiCheatArray = [0,0,0,0,0,0,0,0];
+    var expFlag = 0;
+    var wpConfig = config.wp; //0:下方 other:右方
+    var issConfig= config.iss; //0:普通 1:站搜
+    config.displayType = "inlay";
+    config.stuffType = ads[0].type;
+    config.isGongyi = (ads && ads[0] && ads[0].isHB) ? true : false;
+
+    var ThisPage = {
+        init: function() {
+            if(wpConfig == 0) { //下方
+                var search_box_height   = Math.round(config.rsi1*2/5);
+                var search_box_width    = Math.round(config.rsi0-3*search_box_height);
+            }else { //右方
+                var search_box_height   = Math.round(config.rsi1);
+                var search_box_width    = Math.round((config.rsi0-3*config.rsi1)/2);
+            }
+            var search_btn_text     = "搜索";
+            var search_btn_width  = Math.round(search_box_height*3);
+            var search_btn_height = search_box_height;
+            var down_hotwords_height = Math.round(search_box_height*3/2);
+            var down_hotwords_width  = search_box_width+search_btn_width;
+            var right_hotwords_width = search_box_width;
+            var right_hotwords_height= search_box_height;
+            var font_size = Math.round(search_box_height/40*20);
+
+            var kw  = document.getElementById("kw");    
+            var btn = document.getElementById("btn");
+            var hotwords_down   = document.getElementById("hotwords_down");
+            var hotwords_right  = document.getElementById("hotwords_right");
+
+            //set kw position
+            kw.style.top=0+"px";
+            kw.style.left=0+"px";
+            kw.style.width=search_box_width+"px";
+            kw.style.height=search_box_height+"px";
+            kw.value=window.ads[0].title;
+            kw.style.fontSize= font_size+"px";
+            kw.style.borderColor=config.rss1;
+
+            //set btn position
+            btn.value = search_btn_text;
+            btn.style.top=0+"px";
+            btn.style.left=search_box_width+"px";
+            btn.style.width=search_btn_width+"px";
+            btn.style.height=(search_btn_height+6)+"px";
+            btn.style.fontSize= font_size+"px";
+            btn.onclick=function(){
+                var jump_url = window.ads[0].curl;
+                jump_url = jump_url.replace(/&k=[^&]*/g, "&k="+kw.value);
+                if (window.ads[0].title != kw.value && issConfig == 1)
+                    jump_url = jump_url.replace(/&di=[^&]*/g, "&di=128");
+                else
+                    jump_url = jump_url.replace(/&di=[^&]*/g, "&di=8");
+                window.open(jump_url);
+            }
+            btn.style.backgroundColor=config.rss1;
+
+            hotwords_down.style.top     = (search_box_height+5)+"px";
+            hotwords_down.style.left    = 0+"px";
+            hotwords_down.style.width   = down_hotwords_width+"px";
+            hotwords_down.style.height  = down_hotwords_height+"px";
+            hotwords_down.style.lineHeight = down_hotwords_height/20;
+
+            hotwords_right.style.top    = (search_box_height-font_size)/2+"px";
+            hotwords_right.style.left   = (search_box_width+search_btn_width+5)+"px";
+            hotwords_right.style.width  = right_hotwords_width+"px";
+            hotwords_right.style.height = right_hotwords_height+"px";
+            hotwords_right.style.lineHeight = right_hotwords_height/20;
+            if(wpConfig == 0) {
+                this.paint_ad(hotwords_down, window.ads.length, font_size);
+            }else {
+                this.paint_ad(hotwords_right, window.ads.length, font_size);
+            }
+        },
+
+        paint_ad: function(dom, adn, font_size) {
+            var hotwords=dom;
+            var hotwords_width  = parseInt(hotwords.style.width);
+            var hotwords_height = parseInt(hotwords.style.height)
+            var hotwords_rec    = document.createElement("div");
+            var hotwords_words  = document.createElement("div");
+            var hotwords_rec_width = 0;
+            hotwords_words.style.float ="right";
+            hotwords_words.style.width =(hotwords_width-hotwords_rec_width)+"px";
+            hotwords_words.style.height=hotwords_height+"px";
+            var cell_width = 100;
+            var cell_height= 15;
+            var adn_w = Math.floor((hotwords_width-hotwords_rec_width)/cell_width);
+            var adn_h = Math.floor(hotwords_height/cell_height);
+            var cur_pos = 5;
+            var word_space = font_size*1.3;
+            if (font_size <= 7)
+                word_space = font_size*2;
+            else if (font_size <= 10)
+                word_space = font_size*1.2;
+            else
+                word_space = font_size*1;
+            for (var i=1; i<window.ads.length && (cur_pos+window.ads[i].title.length*word_space+20)<(hotwords_width-hotwords_rec_width); i++) {
+                var item = document.createElement("a");
+                item.setAttribute("href", window.ads[i].curl);
+                item.setAttribute("class", "item");
+                item.setAttribute("target", "_blank");
+                item.style.left = cur_pos +"px";
+                item.style.fontSize=font_size + "px";
+                cur_pos += window.ads[i].title.length*word_space;
+                cur_pos += 20;
+                item.innerHTML = window.ads[i].title;
+                hotwords_words.appendChild(item);
+            }
+            hotwords.appendChild(hotwords_words);
+        }
+    }
+    run(ThisPage.init.proxy(ThisPage));
+</script>
+
+
+</body></html>

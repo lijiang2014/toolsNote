@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)http://www.9958.pw/post/nginx_config -->
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Nginx配置文件nginx.conf中文详解 | rin部落-web前端开发-主流web技术分享博客</title>
+    <meta name="robots" content="all">
+    <meta name="keywords" content="Nginx配置,nginx.conf,nginx">
+    <meta name="description" content="Nginx配置文件nginx.conf中文详解">
+    <link rel="stylesheet" href="./Nginx配置文件nginx.conf中文详解 _ rin部落-web前端开发-主流web技术分享博客_files/style.css">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+    <meta name="baidu-site-verification" content="utxPb5ydcW">
+    <meta property="qc:admins" content="10415174750607">
+    <meta name="chinaz-site-verification" content="081e7651-48c6-4c2f-a569-99321685eab1">
+    <meta name="baidu_union_verify" content="5bd4efaab2b868a82ad01ad3c4c67446">
+    <meta name="360-site-verification" content="9960df046c193b7babccae771f010ddb">
+    <meta name="google-site-verification" content="l1xhngXylrg37GJctu8fibfunA-tkIg088VO8pr3ghc">
+    <!--[if IE]>
+    <script src="http://www.9958.pw/libs/html5.js"></script>
+    <![endif]-->
+	<script src="./Nginx配置文件nginx.conf中文详解 _ rin部落-web前端开发-主流web技术分享博客_files/hm.js"></script><script type="text/javascript" async="" src="./Nginx配置文件nginx.conf中文详解 _ rin部落-web前端开发-主流web技术分享博客_files/vcsm"></script><script type="text/javascript" async="" src="./Nginx配置文件nginx.conf中文详解 _ rin部落-web前端开发-主流web技术分享博客_files/vcsm(1)"></script><script src="./Nginx配置文件nginx.conf中文详解 _ rin部落-web前端开发-主流web技术分享博客_files/jquery.min.js"></script>
+  
+  <script type="text/javascript" async="" src="./Nginx配置文件nginx.conf中文详解 _ rin部落-web前端开发-主流web技术分享博客_files/embed.js" charset="UTF-8"></script><link href="./Nginx配置文件nginx.conf中文详解 _ rin部落-web前端开发-主流web技术分享博客_files/bdsstyle.css" rel="stylesheet" type="text/css"><script src="./Nginx配置文件nginx.conf中文详解 _ rin部落-web前端开发-主流web技术分享博客_files/logger.js"></script><link type="text/css" rel="stylesheet" href="./Nginx配置文件nginx.conf中文详解 _ rin部落-web前端开发-主流web技术分享博客_files/embed.default.css"></head>
+  <body style="zoom: 1;"><div id="BAIDU_DUP_fp_wrapper" style="position: absolute; left: -1px; bottom: -1px; z-index: 0; width: 0px; height: 0px; overflow: hidden; visibility: hidden; display: none;"><iframe id="BAIDU_DUP_fp_iframe" src="./Nginx配置文件nginx.conf中文详解 _ rin部落-web前端开发-主流web技术分享博客_files/o.html" style="width: 0px; height: 0px; visibility: hidden; display: none;"></iframe></div><iframe frameborder="0" style="display: none;"></iframe><div id="bdshare_s" style="display: block;"><iframe id="bdsIfr" style="position:absolute;display:none;z-index:9999;" frameborder="0"></iframe><div id="bdshare_l" style="display: none;"><div id="bdshare_l_c"><h6>分享到</h6><ul><li><a href="http://www.9958.pw/post/nginx_config#" class="bds_mshare mshare">一键分享</a></li><li><a href="http://www.9958.pw/post/nginx_config#" class="bds_qzone qqkj">QQ空间</a></li><li><a href="http://www.9958.pw/post/nginx_config#" class="bds_tsina xlwb">新浪微博</a></li><li><a href="http://www.9958.pw/post/nginx_config#" class="bds_bdysc bdysc">百度云收藏</a></li><li><a href="http://www.9958.pw/post/nginx_config#" class="bds_renren rrw">人人网</a></li><li><a href="http://www.9958.pw/post/nginx_config#" class="bds_tqq txwb">腾讯微博</a></li><li><a href="http://www.9958.pw/post/nginx_config#" class="bds_bdxc bdxc">百度相册</a></li><li><a href="http://www.9958.pw/post/nginx_config#" class="bds_kaixin001 kxw">开心网</a></li><li><a href="http://www.9958.pw/post/nginx_config#" class="bds_tqf txpy">腾讯朋友</a></li><li><a href="http://www.9958.pw/post/nginx_config#" class="bds_tieba bdtb">百度贴吧</a></li><li><a href="http://www.9958.pw/post/nginx_config#" class="bds_douban db">豆瓣网</a></li><li><a href="http://www.9958.pw/post/nginx_config#" class="bds_tsohu shwb">搜狐微博</a></li><li><a href="http://www.9958.pw/post/nginx_config#" class="bds_bdhome bdhome">百度新首页</a></li><li><a href="http://www.9958.pw/post/nginx_config#" class="bds_sqq sqq">QQ好友</a></li><li><a href="http://www.9958.pw/post/nginx_config#" class="bds_thx thx">和讯微博</a></li><li><a href="http://www.9958.pw/post/nginx_config#" class="bds_more">更多...</a></li></ul><p><a href="http://www.9958.pw/post/nginx_config#" class="goWebsite">百度分享</a></p></div></div></div>
+    <div class="navbar navbar-default">
+        <div class="container">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-nav">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="http://www.9958.pw/" title="rin部落">
+                    <span class="logo">
+                     rin部落
+                    </span>
+                  </a>
+                </div>
+              <div class="collapse navbar-collapse navbar-collapse-nav" style="height:0px;">
+                    <ul class="nav navbar-nav navbar-right">
+                          <li><a href="http://www.9958.pw/page/about" title="关于我">关于我</a></li>
+                          <li><a href="http://www.9958.pw/archives" title="文章存档">文章存档</a></li>
+                          <li id="onlineTool"><a href="http://tool.9958.pw/" title="在线工具">在线工具</a></li>
+                          <li id="siteNav"><a href="http://www.9958.pw/nav" title="网址导航">网址导航</a></li>
+                    </ul>
+                </div>
+          </div>
+    </div>
+    
+<div id="main" class="container page">
+
+  <h1 class="title">Nginx配置文件nginx.conf中文详解</h1>
+  <article class="post block posts">
+ 
+    <div class="entry">
+<h2 id="-">通性配置</h2>
+<p>定义Nginx运行的用户和用户组</p>
+<pre class="prettyprint prettyprinted"><code><span class="pln">user www www</span><span class="pun">;</span></code></pre><p>nginx进程数，建议设置为等于CPU总核心数.</p>
+<pre class="prettyprint prettyprinted"><code><span class="pln">worker_processes </span><span class="lit">8</span><span class="pun">;</span></code></pre><p>全局错误日志定义类型，[ debug | info | notice | warn | error | crit ]</p>
+<pre class="prettyprint prettyprinted"><code><span class="pln">error_log </span><span class="pun">/</span><span class="kwd">var</span><span class="pun">/</span><span class="pln">log</span><span class="pun">/</span><span class="pln">nginx</span><span class="pun">/</span><span class="pln">error</span><span class="pun">.</span><span class="pln">log info</span><span class="pun">;</span></code></pre><p>进程文件</p>
+<pre class="prettyprint prettyprinted"><code><span class="pln">pid </span><span class="pun">/</span><span class="kwd">var</span><span class="pun">/</span><span class="pln">run</span><span class="pun">/</span><span class="pln">nginx</span><span class="pun">.</span><span class="pln">pid</span><span class="pun">;</span></code></pre><p>一个nginx进程打开的最多文件描述符数目，理论值应该是最多打开文件数（系统的值ulimit -n）与nginx进程数相除，但是nginx分配请求并不均匀，所以建议与ulimit -n的值保持一致。</p>
+<pre class="prettyprint prettyprinted"><code><span class="pln">worker_rlimit_nofile </span><span class="lit">65535</span><span class="pun">;</span></code></pre><!--more-->
+<p>工作模式与连接数上限</p>
+<pre class="prettyprint prettyprinted"><code><span class="pln">events
+</span><span class="pun">{</span><span class="pln">
+</span><span class="com">#参考事件模型，use [ kqueue | rtsig | epoll | /dev/poll | select | poll ]; epoll模型是Linux 2.6以上版本内核中的高性能网络I/O模型，如果跑在FreeBSD上面，就用kqueue模型。</span><span class="pln">
+</span><span class="kwd">use</span><span class="pln"> epoll</span><span class="pun">;</span><span class="pln">
+</span><span class="com">#单个进程最大连接数（最大连接数=连接数*进程数）</span><span class="pln">
+worker_connections </span><span class="lit">65535</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></code></pre><p>设定http服务器</p>
+<pre class="prettyprint prettyprinted"><code><span class="pln">http
+</span><span class="pun">{</span><span class="pln">
+include mime</span><span class="pun">.</span><span class="pln">types</span><span class="pun">;</span><span class="pln"> </span><span class="com">#文件扩展名与文件类型映射表</span><span class="pln">
+default_type application</span><span class="pun">/</span><span class="pln">octet</span><span class="pun">-</span><span class="pln">stream</span><span class="pun">;</span><span class="pln"> </span><span class="com">#默认文件类型</span><span class="pln">
+</span><span class="com">#charset utf-8; #默认编码</span><span class="pln">
+server_names_hash_bucket_size </span><span class="lit">128</span><span class="pun">;</span><span class="pln"> </span><span class="com">#服务器名字的hash表大小</span><span class="pln">
+client_header_buffer_size </span><span class="lit">32k</span><span class="pun">;</span><span class="pln"> </span><span class="com">#上传文件大小限制</span><span class="pln">
+large_client_header_buffers </span><span class="lit">4</span><span class="pln"> </span><span class="lit">64k</span><span class="pun">;</span><span class="pln"> </span><span class="com">#设定请求缓</span><span class="pln">
+client_max_body_size </span><span class="lit">8m</span><span class="pun">;</span><span class="pln"> </span><span class="com">#设定请求缓</span><span class="pln">
+sendfile on</span><span class="pun">;</span><span class="pln"> </span><span class="com">#开启高效文件传输模式，sendfile指令指定nginx是否调用sendfile函数来输出文件，对于普通应用设为 on，如果用来进行下载等应用磁盘IO重负载应用，可设置为off，以平衡磁盘与网络I/O处理速度，降低系统的负载。注意：如果图片显示不正常把这个改成off。</span><span class="pln">
+autoindex on</span><span class="pun">;</span><span class="pln"> </span><span class="com">#开启目录列表访问，合适下载服务器，默认关闭。</span><span class="pln">
+tcp_nopush on</span><span class="pun">;</span><span class="pln"> </span><span class="com">#防止网络阻塞</span><span class="pln">
+tcp_nodelay on</span><span class="pun">;</span><span class="pln"> </span><span class="com">#防止网络阻塞</span><span class="pln">
+keepalive_timeout </span><span class="lit">120</span><span class="pun">;</span><span class="pln"> </span><span class="com">#长连接超时时间，单位是秒</span><span class="pln">
+
+</span><span class="com">#FastCGI相关参数是为了改善网站的性能：减少资源占用，提高访问速度。下面参数看字面意思都能理解。</span><span class="pln">
+fastcgi_connect_timeout </span><span class="lit">300</span><span class="pun">;</span><span class="pln">
+fastcgi_send_timeout </span><span class="lit">300</span><span class="pun">;</span><span class="pln">
+fastcgi_read_timeout </span><span class="lit">300</span><span class="pun">;</span><span class="pln">
+fastcgi_buffer_size </span><span class="lit">64k</span><span class="pun">;</span><span class="pln">
+fastcgi_buffers </span><span class="lit">4</span><span class="pln"> </span><span class="lit">64k</span><span class="pun">;</span><span class="pln">
+fastcgi_busy_buffers_size </span><span class="lit">128k</span><span class="pun">;</span><span class="pln">
+fastcgi_temp_file_write_size </span><span class="lit">128k</span><span class="pun">;</span><span class="pln">
+
+</span><span class="com">#gzip模块设置</span><span class="pln">
+gzip on</span><span class="pun">;</span><span class="pln"> </span><span class="com">#开启gzip压缩输出</span><span class="pln">
+gzip_min_length </span><span class="lit">1k</span><span class="pun">;</span><span class="pln"> </span><span class="com">#最小压缩文件大小</span><span class="pln">
+gzip_buffers </span><span class="lit">4</span><span class="pln"> </span><span class="lit">16k</span><span class="pun">;</span><span class="pln"> </span><span class="com">#压缩缓冲区</span><span class="pln">
+gzip_http_version </span><span class="lit">1.0</span><span class="pun">;</span><span class="pln"> </span><span class="com">#压缩版本（默认1.1，前端如果是squid2.5请使用1.0）</span><span class="pln">
+gzip_comp_level </span><span class="lit">2</span><span class="pun">;</span><span class="pln"> </span><span class="com">#压缩等级</span><span class="pln">
+gzip_types text</span><span class="pun">/</span><span class="pln">plain application</span><span class="pun">/</span><span class="pln">x</span><span class="pun">-</span><span class="pln">javascript text</span><span class="pun">/</span><span class="pln">css application</span><span class="pun">/</span><span class="pln">xml</span><span class="pun">;</span><span class="pln">
+</span><span class="com">#压缩类型，默认就已经包含text/html，所以下面就不用再写了，写上去也不会有问题，但是会有一个warn。</span><span class="pln">
+gzip_vary on</span><span class="pun">;</span><span class="pln">
+</span><span class="com">#limit_zone crawler $binary_remote_addr 10m; #开启限制IP连接数的时候需要使用</span><span class="pln">
+
+upstream blog</span><span class="pun">.</span><span class="pln">ha97</span><span class="pun">.</span><span class="pln">com </span><span class="pun">{</span><span class="pln">
+</span><span class="com">#upstream的负载均衡，weight是权重，可以根据机器配置定义权重。weigth参数表示权值，权值越高被分配到的几率越大。</span><span class="pln">
+server </span><span class="lit">192.168</span><span class="pun">.</span><span class="lit">80.121</span><span class="pun">:</span><span class="lit">80</span><span class="pln"> weight</span><span class="pun">=</span><span class="lit">3</span><span class="pun">;</span><span class="pln">
+server </span><span class="lit">192.168</span><span class="pun">.</span><span class="lit">80.122</span><span class="pun">:</span><span class="lit">80</span><span class="pln"> weight</span><span class="pun">=</span><span class="lit">2</span><span class="pun">;</span><span class="pln">
+server </span><span class="lit">192.168</span><span class="pun">.</span><span class="lit">80.123</span><span class="pun">:</span><span class="lit">80</span><span class="pln"> weight</span><span class="pun">=</span><span class="lit">3</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></code></pre><p>虚拟主机的配置</p>
+<pre class="prettyprint prettyprinted"><code><span class="pln">server
+</span><span class="pun">{</span><span class="pln">
+</span><span class="com">#监听端口</span><span class="pln">
+listen </span><span class="lit">80</span><span class="pun">;</span><span class="pln">
+</span><span class="com">#域名可以有多个，用空格隔开</span><span class="pln">
+index index</span><span class="pun">.</span><span class="pln">html index</span><span class="pun">.</span><span class="pln">htm index</span><span class="pun">.</span><span class="pln">php</span><span class="pun">;</span><span class="pln">
+root </span><span class="pun">/</span><span class="pln">data</span><span class="pun">/</span><span class="pln">www</span><span class="pun">/</span><span class="pln">ha97</span><span class="pun">;</span><span class="pln">
+location </span><span class="pun">~</span><span class="pln"> </span><span class="pun">.*.(</span><span class="pln">php</span><span class="pun">|</span><span class="pln">php5</span><span class="pun">)?</span><span class="pln">$
+</span><span class="pun">{</span><span class="pln">
+fastcgi_pass </span><span class="lit">127.0</span><span class="pun">.</span><span class="lit">0.1</span><span class="pun">:</span><span class="lit">9000</span><span class="pun">;</span><span class="pln">
+fastcgi_index index</span><span class="pun">.</span><span class="pln">php</span><span class="pun">;</span><span class="pln">
+include fastcgi</span><span class="pun">.</span><span class="pln">conf</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="com">#图片缓存时间设置</span><span class="pln">
+location </span><span class="pun">~</span><span class="pln"> </span><span class="pun">.*.(</span><span class="pln">gif</span><span class="pun">|</span><span class="pln">jpg</span><span class="pun">|</span><span class="pln">jpeg</span><span class="pun">|</span><span class="pln">png</span><span class="pun">|</span><span class="pln">bmp</span><span class="pun">|</span><span class="pln">swf</span><span class="pun">)</span><span class="pln">$
+</span><span class="pun">{</span><span class="pln">
+expires </span><span class="lit">10d</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="com">#JS和CSS缓存时间设置</span><span class="pln">
+location </span><span class="pun">~</span><span class="pln"> </span><span class="pun">.*.(</span><span class="pln">js</span><span class="pun">|</span><span class="pln">css</span><span class="pun">)?</span><span class="pln">$
+</span><span class="pun">{</span><span class="pln">
+expires </span><span class="lit">1h</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></code></pre><p>日志格式设定</p>
+<pre class="prettyprint prettyprinted"><code><span class="pln">log_format access </span><span class="str">'$remote_addr - $remote_user [$time_local] "$request" '</span><span class="pln">
+</span><span class="str">'$status $body_bytes_sent "$http_referer" '</span><span class="pln">
+</span><span class="str">'"$http_user_agent" $http_x_forwarded_for'</span><span class="pun">;</span><span class="pln">
+</span><span class="com">#定义本虚拟主机的访问日志</span><span class="pln">
+access_log </span><span class="pun">/</span><span class="kwd">var</span><span class="pun">/</span><span class="pln">log</span><span class="pun">/</span><span class="pln">nginx</span><span class="pun">/</span><span class="pln">ha97access</span><span class="pun">.</span><span class="pln">log access</span><span class="pun">;</span><span class="pln">
+
+</span><span class="com">#对 "/" 启用反向代理</span><span class="pln">
+location </span><span class="pun">/</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+proxy_pass http</span><span class="pun">:</span><span class="com">//127.0.0.1:88;</span><span class="pln">
+proxy_redirect off</span><span class="pun">;</span><span class="pln">
+proxy_set_header X</span><span class="pun">-</span><span class="typ">Real</span><span class="pun">-</span><span class="pln">IP $remote_addr</span><span class="pun">;</span><span class="pln">
+</span><span class="com">#后端的Web服务器可以通过X-Forwarded-For获取用户真实IP</span><span class="pln">
+proxy_set_header X</span><span class="pun">-</span><span class="typ">Forwarded</span><span class="pun">-</span><span class="typ">For</span><span class="pln"> $proxy_add_x_forwarded_for</span><span class="pun">;</span><span class="pln">
+</span><span class="com">#以下是一些反向代理的配置，可选。</span><span class="pln">
+proxy_set_header </span><span class="typ">Host</span><span class="pln"> $host</span><span class="pun">;</span><span class="pln">
+client_max_body_size </span><span class="lit">10m</span><span class="pun">;</span><span class="pln"> </span><span class="com">#允许客户端请求的最大单文件字节数</span><span class="pln">
+client_body_buffer_size </span><span class="lit">128k</span><span class="pun">;</span><span class="pln"> </span><span class="com">#缓冲区代理缓冲用户端请求的最大字节数，</span><span class="pln">
+proxy_connect_timeout </span><span class="lit">90</span><span class="pun">;</span><span class="pln"> </span><span class="com">#nginx跟后端服务器连接超时时间(代理连接超时)</span><span class="pln">
+proxy_send_timeout </span><span class="lit">90</span><span class="pun">;</span><span class="pln"> </span><span class="com">#后端服务器数据回传时间(代理发送超时)</span><span class="pln">
+proxy_read_timeout </span><span class="lit">90</span><span class="pun">;</span><span class="pln"> </span><span class="com">#连接成功后，后端服务器响应时间(代理接收超时)</span><span class="pln">
+proxy_buffer_size </span><span class="lit">4k</span><span class="pun">;</span><span class="pln"> </span><span class="com">#设置代理服务器（nginx）保存用户头信息的缓冲区大小</span><span class="pln">
+proxy_buffers </span><span class="lit">4</span><span class="pln"> </span><span class="lit">32k</span><span class="pun">;</span><span class="pln"> </span><span class="com">#proxy_buffers缓冲区，网页平均在32k以下的设置</span><span class="pln">
+proxy_busy_buffers_size </span><span class="lit">64k</span><span class="pun">;</span><span class="pln"> </span><span class="com">#高负荷下缓冲大小（proxy_buffers*2）</span><span class="pln">
+proxy_temp_file_write_size </span><span class="lit">64k</span><span class="pun">;</span><span class="pln">
+</span><span class="com">#设定缓存文件夹大小，大于这个值，将从upstream服务器传</span><span class="pln">
+</span><span class="pun">}</span></code></pre><p>设定查看Nginx状态的地址</p>
+<pre class="prettyprint prettyprinted"><code><span class="pln">location </span><span class="pun">/</span><span class="typ">NginxStatus</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+stub_status on</span><span class="pun">;</span><span class="pln">
+access_log on</span><span class="pun">;</span><span class="pln">
+auth_basic </span><span class="str">"NginxStatus"</span><span class="pun">;</span><span class="pln">
+auth_basic_user_file conf</span><span class="pun">/</span><span class="pln">htpasswd</span><span class="pun">;</span><span class="pln">
+</span><span class="com">#htpasswd文件的内容可以用apache提供的htpasswd工具来产生。</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="com">#本地动静分离反向代理配置</span><span class="pln">
+</span><span class="com">#所有jsp的页面均交由tomcat或resin处理</span><span class="pln">
+location </span><span class="pun">~</span><span class="pln"> </span><span class="pun">.(</span><span class="pln">jsp</span><span class="pun">|</span><span class="pln">jspx</span><span class="pun">|</span><span class="kwd">do</span><span class="pun">)?</span><span class="pln">$ </span><span class="pun">{</span><span class="pln">
+proxy_set_header </span><span class="typ">Host</span><span class="pln"> $host</span><span class="pun">;</span><span class="pln">
+proxy_set_header X</span><span class="pun">-</span><span class="typ">Real</span><span class="pun">-</span><span class="pln">IP $remote_addr</span><span class="pun">;</span><span class="pln">
+proxy_set_header X</span><span class="pun">-</span><span class="typ">Forwarded</span><span class="pun">-</span><span class="typ">For</span><span class="pln"> $proxy_add_x_forwarded_for</span><span class="pun">;</span><span class="pln">
+proxy_pass http</span><span class="pun">:</span><span class="com">//127.0.0.1:8080;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="com">#所有静态文件由nginx直接读取不经过tomcat或resin</span><span class="pln">
+location </span><span class="pun">~</span><span class="pln"> </span><span class="pun">.*.(</span><span class="pln">htm</span><span class="pun">|</span><span class="pln">html</span><span class="pun">|</span><span class="pln">gif</span><span class="pun">|</span><span class="pln">jpg</span><span class="pun">|</span><span class="pln">jpeg</span><span class="pun">|</span><span class="pln">png</span><span class="pun">|</span><span class="pln">bmp</span><span class="pun">|</span><span class="pln">swf</span><span class="pun">|</span><span class="pln">ioc</span><span class="pun">|</span><span class="pln">rar</span><span class="pun">|</span><span class="pln">zip</span><span class="pun">|</span><span class="pln">txt</span><span class="pun">|</span><span class="pln">flv</span><span class="pun">|</span><span class="pln">mid</span><span class="pun">|</span><span class="pln">doc</span><span class="pun">|</span><span class="pln">ppt</span><span class="pun">|</span><span class="pln">pdf</span><span class="pun">|</span><span class="pln">xls</span><span class="pun">|</span><span class="pln">mp3</span><span class="pun">|</span><span class="pln">wma</span><span class="pun">)</span><span class="pln">$
+</span><span class="pun">{</span><span class="pln"> expires </span><span class="lit">15d</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln">
+location </span><span class="pun">~</span><span class="pln"> </span><span class="pun">.*.(</span><span class="pln">js</span><span class="pun">|</span><span class="pln">css</span><span class="pun">)?</span><span class="pln">$
+</span><span class="pun">{</span><span class="pln"> expires </span><span class="lit">1h</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre><h2 id="-">其他案例分享</h2>
+<p><strong>1.thinkphp PATH_INFO支持</strong></p>
+<p>可以考虑通过配置URL重写规则来模拟实现，可以参考 thinkphp 隐藏index.php</p>
+<p><strong>2.thinkphp 隐藏index.php</strong></p>
+<p>thinkphp config配置：</p>
+<pre class="prettyprint prettyprinted"><code><span class="str">'URL_MODEL'</span><span class="pln">          </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'2'</span><span class="pun">,</span><span class="pln"> </span><span class="com">//URL模式</span></code></pre><p>nginx rewrite配置：</p>
+<pre class="prettyprint prettyprinted"><code><span class="pln">location </span><span class="pun">/</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> 
+   </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(!-</span><span class="pln">e $request_filename</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+   rewrite  </span><span class="pun">^(.*)</span><span class="pln">$  </span><span class="pun">/</span><span class="pln">index</span><span class="pun">.</span><span class="pln">php</span><span class="pun">?</span><span class="pln">s</span><span class="pun">=</span><span class="pln">$1  </span><span class="kwd">last</span><span class="pun">;</span><span class="pln">
+   </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre><p>如果你的ThinkPHP安装在二级目录，Nginx的伪静态方法设置如下，其中youdomain是所在的目录名称</p>
+<pre class="prettyprint prettyprinted"><code><span class="pln">location </span><span class="pun">/</span><span class="pln">youdomain</span><span class="pun">/</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(!-</span><span class="pln">e $request_filename</span><span class="pun">){</span><span class="pln">
+            rewrite  </span><span class="pun">^</span><span class="str">/youdomain/</span><span class="pun">(.*)</span><span class="pln">$  </span><span class="pun">/</span><span class="pln">youdomain</span><span class="pun">/</span><span class="pln">index</span><span class="pun">.</span><span class="pln">php</span><span class="pun">?</span><span class="pln">s</span><span class="pun">=</span><span class="pln">$1  </span><span class="kwd">last</span><span class="pun">;</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span></code></pre>
+
+
+</div>
+    <div class="meta">
+      <time>2015-07-02</time>
+    </div>
+   
+    <div class="share" style="margin-top: 10px;">
+        <!-- Baidu Button BEGIN -->
+        <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+        <span class="bds_more">分享到：</span>
+        <a class="bds_qzone" title="分享到QQ空间" href="http://www.9958.pw/post/nginx_config#"></a>
+        <a class="bds_tsina" title="分享到新浪微博" href="http://www.9958.pw/post/nginx_config#"></a>
+        <a class="bds_tqq" title="分享到腾讯微博" href="http://www.9958.pw/post/nginx_config#"></a>
+        <a class="bds_renren" title="分享到人人网" href="http://www.9958.pw/post/nginx_config#"></a>
+        <a class="bds_t163" title="分享到网易微博" href="http://www.9958.pw/post/nginx_config#"></a>
+        <a class="shareCount" href="http://www.9958.pw/post/nginx_config#" title="累计分享3次">3</a>
+        </div>
+        <script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6531798" src="./Nginx配置文件nginx.conf中文详解 _ rin部落-web前端开发-主流web技术分享博客_files/bds_s_v2.js"></script>
+        
+        <script type="text/javascript">
+        document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+        </script>
+        <!-- Baidu Button END -->
+    </div>
+  </article>
+  
+  <div id="reply" class="block inner posts">
+   <!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="316" data-title="Nginx配置文件nginx.conf中文详解" data-url="http://www.9958.pw/post/nginx_config" id="ds-thread"><div id="ds-reset"><div class="ds-meta" style="display: none;"><a href="javascript:void(0)" class="ds-like-thread-button ds-rounded"><span class="ds-icon ds-icon-heart"></span> <span class="ds-thread-like-text">喜欢</span><span class="ds-thread-cancel-like">取消喜欢</span></a><span class="ds-like-panel"></span></div><div class="ds-comments-info"><div class="ds-sort"><a class="ds-order-desc">最新</a><a class="ds-order-asc ds-current">最早</a><a class="ds-order-hot">最热</a></div><ul class="ds-comments-tabs"><li class="ds-tab"><a class="ds-comments-tab-duoshuo ds-current" href="javascript:void(0);">0条评论</a></li>  </ul></div><ul class="ds-comments"><li class="ds-post ds-post-placeholder">还没有评论，沙发等你来抢</li></ul><div class="ds-paginator" style="display: none;"><div class="ds-border"></div><a data-page="1" href="javascript:void(0);" class="ds-current">1</a></div><a name="respond"></a><div class="ds-login-buttons"><p>社交帐号登录:</p><div class="ds-social-links"><ul class="ds-service-list"><li><a href="http://rin9958.duoshuo.com/login/weixin/" rel="nofollow" class="ds-service-link ds-weixin">微信</a></li><li><a href="http://rin9958.duoshuo.com/login/weibo/" rel="nofollow" class="ds-service-link ds-weibo">微博</a></li><li><a href="http://rin9958.duoshuo.com/login/qq/" rel="nofollow" class="ds-service-link ds-qq">QQ</a></li><li><a href="http://rin9958.duoshuo.com/login/renren/" rel="nofollow" class="ds-service-link ds-renren">人人</a></li><li><a class="ds-more-services" href="javascript:void(0)">更多»</a></li></ul><ul class="ds-service-list ds-additional-services"><li><a href="http://rin9958.duoshuo.com/login/douban/" rel="nofollow" class="ds-service-link ds-douban">豆瓣</a></li><li><a href="http://rin9958.duoshuo.com/login/kaixin/" rel="nofollow" class="ds-service-link ds-kaixin">开心</a></li><li><a href="http://rin9958.duoshuo.com/login/baidu/" rel="nofollow" class="ds-service-link ds-baidu">百度</a></li><li><a href="http://rin9958.duoshuo.com/login/google/" rel="nofollow" class="ds-service-link ds-google">谷歌</a></li></ul></div></div><div class="ds-replybox"><a class="ds-avatar" href="javascript:void(0);" onclick="return false"><img src="./Nginx配置文件nginx.conf中文详解 _ rin部落-web前端开发-主流web技术分享博客_files/noavatar_default.png" alt=""></a><form method="post"><input type="hidden" name="thread_id" value="6255691323139949313">
+<input type="hidden" name="parent_id" value="">
+<input type="hidden" name="nonce" value="57ff45ceadfcf"><div class="ds-textarea-wrapper ds-rounded-top"><textarea name="message" title="Ctrl+Enter快捷提交" placeholder="说点什么吧…"></textarea><pre class="ds-hidden-text"></pre></div><div class="ds-post-toolbar"><div class="ds-post-options ds-gradient-bg"><span class="ds-sync"></span></div><button class="ds-post-button" type="submit">发布</button><div class="ds-toolbar-buttons"><a class="ds-toolbar-button ds-add-emote" title="插入表情"></a></div></div></form></div><p class="ds-powered-by"><a href="http://duoshuo.com/" target="_blank" rel="nofollow">rin部落正在使用多说</a></p></div></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"rin9958"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+  </div>
+  
+   <div class="sidebar" style="margin-top: 43px;">
+  	  
+<div class="block" style="overflow:inherit;">
+  
+    <div class="widget about">
+      <strong class="wt">关于rin部落</strong>
+      <div class="wc">
+        <p style="text-indent: 2em;">
+          rin部落一个以web应用为中心,面向网络上所有作为Web开发的读者及程序爱好者的技术博客。
+        </p>
+		<p style="text-indent: 2em;">
+		博客主要以学习并钻研技术,分享与记录工作和生活中的点点滴滴.博客的宗旨是与大家交流互勉共同进步！
+		</p>
+
+        
+      </div>
+	  <strong class="wt">联系方式</strong>
+	   <div class="wc" style="padding-top:0;padding-bottom:0;position:relative;">
+	   		<a href="http://wpa.qq.com/msgrd?v=3&amp;uin=1489760568&amp;site=qq&amp;menu=yes" target="_blank" style="margin-left: 0px;" class="contractmethod">
+				<i class="iconfont"></i>
+			</a>
+			<a href="javascript:" class="contractmethod weixinhover">
+				<i class="iconfont" style="style=" font-size:3.5em;""=""></i>
+				<div class="hoverimg"></div>
+			</a>
+			<a href="https://github.com/9958" target="_blank" class="contractmethod ">
+				<i class="iconfont" style="position:relative;top:4px;"></i>
+			</a>
+	   </div>
+    </div>
+  </div>
+    <div class="block">
+    <div class="widget about">
+<script type="text/javascript">
+    /*300*54 创建于 2016-02-25*/
+    var cpro_id = "u2532001";
+</script>
+<script src="./Nginx配置文件nginx.conf中文详解 _ rin部落-web前端开发-主流web技术分享博客_files/c.js" type="text/javascript"></script><div id="BAIDU_SSP__wrapper_u2532001_0"><iframe id="iframeu2532001_0" src="./Nginx配置文件nginx.conf中文详解 _ rin部落-web前端开发-主流web技术分享博客_files/vcsm.html" width="300" height="54" align="center,center" vspace="0" hspace="0" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" style="border:0; vertical-align:bottom;margin:0;" allowtransparency="true"></iframe></div>
+</div>
+  </div>
+    
+<div class="block">
+    <div class="widget about">
+      <strong class="wt">相关文章</strong>
+      <div class="wc">
+          <ul>
+              
+              <li><a href="http://www.9958.pw/post/nginx_config" title="Nginx配置文件nginx.conf中文详解">Nginx配置文件nginx.conf中文详解</a></li>
+              
+          </ul>
+        <div class="sep10"></div>
+      </div>
+    </div>
+  </div>
+  
+    <div class="block">
+    <div class="widget about">
+      <strong class="wt">文章标签</strong>
+      <div class="wc">
+         <div class="tags">
+        
+        <p>
+          
+          <a href="http://www.9958.pw/tag/Nginx%E9%85%8D%E7%BD%AE" title="Nginx配置">Nginx配置</a>，
+          
+          <a href="http://www.9958.pw/tag/nginx.conf" title="nginx.conf">nginx.conf</a>，
+          
+          <a href="http://www.9958.pw/tag/nginx" title="nginx">nginx</a>
+          
+        </p>
+        
+      </div>
+        <div class="sep10"></div>
+      </div>
+    </div>
+  </div>
+	<div class="block">
+    <div class="widget about" style="margin-bottom: 0px;">
+      <script type="text/javascript">
+    /*300*250 创建于 2015-05-15*/
+    var cpro_id = "u2105026";
+</script>
+<script src="./Nginx配置文件nginx.conf中文详解 _ rin部落-web前端开发-主流web技术分享博客_files/c.js" type="text/javascript"></script><div id="BAIDU_SSP__wrapper_u2105026_0"><iframe id="iframeu2105026_0" src="./Nginx配置文件nginx.conf中文详解 _ rin部落-web前端开发-主流web技术分享博客_files/vcsm(2).html" width="300" height="250" align="center,center" vspace="0" hspace="0" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" style="border:0; vertical-align:bottom;margin:0;" allowtransparency="true"></iframe></div>
+
+    </div>
+  </div>
+  
+<div class="block">
+    <div class="widget about">
+      <strong class="wt">最新文章</strong>
+      <div class="wc">
+          <ul>
+              
+              <li><a href="http://www.9958.pw/post/php_foreach" title="php foreach 使用引用注意事项">php foreach 使用引用注意事项</a></li>
+              
+              <li><a href="http://www.9958.pw/post/tortoisesvn" title="TortoiseSVN客户端实用技巧总结（待更新）">TortoiseSVN客户端实用技巧总结（待更新）</a></li>
+              
+              <li><a href="http://www.9958.pw/post/win7_wampserver_msvcr110" title="win7安装wampserver过程中解决缺少msvcr110.dll的方法 ">win7安装wampserver过程中解决缺少msvcr110.dll的方法 </a></li>
+              
+              <li><a href="http://www.9958.pw/post/git_2" title="开发者GIT常用命令（二）">开发者GIT常用命令（二）</a></li>
+              
+              <li><a href="http://www.9958.pw/post/php_code_collect" title="PHP代码库、使用代码片段整理（2016-04-15更新）">PHP代码库、使用代码片段整理（2016-04-15更新）</a></li>
+              
+              <li><a href="http://www.9958.pw/post/mysql_waigua_skill" title="解决外挂刷mysql记录状态的几个技巧">解决外挂刷mysql记录状态的几个技巧</a></li>
+              
+              <li><a href="http://www.9958.pw/post/node_pm2" title="PM2入门教程">PM2入门教程</a></li>
+              
+              <li><a href="http://www.9958.pw/post/php_serach_engine" title="适合PHP的搜索引擎你值得拥有（让搜索飞起来吧！）">适合PHP的搜索引擎你值得拥有（让搜索飞起来吧！）</a></li>
+              
+              <li><a href="http://www.9958.pw/post/sort_method" title="常用排序算法总结回顾">常用排序算法总结回顾</a></li>
+              
+              <li><a href="http://www.9958.pw/post/nodejs_proxy201603" title="用 nodejs 做反向代理服务器">用 nodejs 做反向代理服务器</a></li>
+              
+          </ul>
+        <div class="sep10"></div>
+      </div>
+    </div>
+  </div>
+  
+  </div>
+</div>
+<script src="./Nginx配置文件nginx.conf中文详解 _ rin部落-web前端开发-主流web技术分享博客_files/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  (function () {
+    $("pre").addClass("prettyprint");
+    prettyPrint();
+  })()
+</script>
+
+    <footer id="main-footer">
+    <div class="container">
+      <p>
+	  我的：
+	  <a href="http://blog.csdn.net/ldl_xz" target="_blank">csdn博客</a>
+	  | <a href="http://www.cnblogs.com/rin9958/" target="_blank">博客园</a>
+	  | <a href="http://ldl-xz.iteye.com/" target="_blank">iteye博客</a>
+	  | <a href="https://github.com/9958" target="_blank">github</a>
+	  | <a href="http://my.oschina.net/u/1179286" target="_blank">开源中国博客</a>
+	  | <a href="http://blog.chinaunix.net/uid/30959623.html" target="_blank">ChinaUnix博客</a>
+          | <a href="http://www.9958.pw/sitemap.html" target="_blank" title="网站地图">网站地图</a> 
+		  | <a href="http://www.9958.pw/sitemap.xml" target="_blank" title="sitemap">sitemap</a> 
+      </p>
+      <p>
+	  Copyright © Rin部落 All Rights Reserved   
+	  <a href="http://www.miitbeian.gov.cn/" target="_blank">沪ICP备14000208号</a>
+	  <script src="./Nginx配置文件nginx.conf中文详解 _ rin部落-web前端开发-主流web技术分享博客_files/stat.php" language="JavaScript"></script><script src="./Nginx配置文件nginx.conf中文详解 _ rin部落-web前端开发-主流web技术分享博客_files/core.php" charset="utf-8" type="text/javascript"></script><a href="http://www.cnzz.com/stat/website.php?web_id=5320846" target="_blank" title="站长统计">站长统计</a></p>
+    </div>
+    </footer>
+
+<div class="top" style="display: none;">↑
+</div>
+
+
+
+  
+  <script type="text/javascript">
+$(document).ready(function(){
+$(window).scroll(function(){
+if($(this).scrollTop()>100){
+$('.top').fadeIn();}
+else{
+$('.top').fadeOut();} });
+$('.top').click(function(){
+$('body,html').animate({scrollTop:0},800);});
+});
+
+</script>
+      <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?0224451f8df22a9bcbff7232d2df85d5";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script src="./Nginx配置文件nginx.conf中文详解 _ rin部落-web前端开发-主流web技术分享博客_files/main.js"></script>
+
+</body></html>
